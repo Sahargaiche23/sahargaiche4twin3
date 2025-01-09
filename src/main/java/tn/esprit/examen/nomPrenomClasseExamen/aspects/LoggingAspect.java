@@ -32,4 +32,9 @@ public class LoggingAspect {
         log.info("AfterThrowing of method " + name + " : ");
         log.error(nameEx.getMessage());
     }
+    @After("execution(* com.example.service.OrdreService.addOrdreAndAffectToActionAndPortefeuille(..))")
+    public void logAfterAddingOrder(JoinPoint joinPoint) {
+        System.out.println("L'ordre est en train d'être traité.");
+    }
+
 }
